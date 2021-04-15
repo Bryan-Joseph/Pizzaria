@@ -20,12 +20,25 @@ function additem() {
     var item = document.getElementById("add_item").value;
     Pizzas.push(item);
     Pizzas.sort();
+
+    needed();
+
+    console.log("finished additem()");
+}
+
+function needed() {
+
+    console.log("needed is running");
+
+    var html;
+    Pizzas.sort();
     html = "<section class='card'> ";
     for (i = 0; i < Pizzas.length; i++) {
         html = html + "<div class='card'>" + "<img src='images/pizzaImg.png'>" + Pizzas[i] + "</div>";
-        console.log("finished" + Pizzas[i]);        
+        console.log("finished " + Pizzas[i]);        
     }
     html = html + "</section>";
     document.getElementById("display_addedmenu").innerHTML = html;
-    console.log("finished additem()");
+
+    console.log("finished needed()");
 }
